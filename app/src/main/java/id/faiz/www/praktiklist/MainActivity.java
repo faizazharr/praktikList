@@ -32,17 +32,22 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                String clicked = (String) listView.getItemAtPosition(position);
-                Toast.makeText(MainActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
+                Artist clicked = (Artist) listView.getItemAtPosition(position);
+                String message = clicked.getNama() + "Jumlah Followers: " + clicked.getFollower();
+                Toast.makeText(MainActivity.this, message,Toast.LENGTH_SHORT).show();
             }
         });
     }
 
     private List<Artist> getData(){
         Artist[] artists = new Artist[]{
-            new Artist("faiz", 10, "laki"),
-            new Artist("Azhar", 12, "perempuan"),
-            new Artist("Ristya", 13, "laki")
+                new Artist("Aokiji", 1233300, "male","jpn"),
+                new Artist("Monkey D Luffy",1999999000,"male","idn"),
+                new Artist("Vinsmoke", 1029929228,"male","jey"),
+                new Artist("Roronoa Zoro", 455789621,"male","jpn"),
+                new Artist("Chooper", 44456755, "male","idn"),
+                new Artist("Eyeshild 21", 45687862,"female","kor"),
+
         };
     return  new ArrayList<>(Arrays.asList(artists));
     }

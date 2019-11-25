@@ -5,4 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="perempuan">#D53A72</color>
     <color name="laki">#86737A</color>
+    <color name="bg_female">#EE1966</color>
+    <color name="bg_male">#2196F3</color>
+    <color name="bg_group">#705F5F5F</color>
 </resources>

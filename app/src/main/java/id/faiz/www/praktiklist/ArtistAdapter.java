@@ -53,11 +53,24 @@ public class ArtistAdapter extends BaseAdapter {
         }
         holder.namaView.setText(artists.get(position).getNama());
         holder.followerView.setText(String.valueOf(artists.get(position).getFollower()));
-        if (position == 0) {
-            convertView.setBackgroundResource(R.);
-        } else if (position == 1) {
-            convertView.setBackgroundResource(R.);
+        int id = context.getResources().getIdentifier(
+                "flag_" + artists.get(position).getCountryCode(),
+                "drawable", context.getPackageName());
+        holder.avatarView.setImageDrawable(context.getResources().getDrawable(id));
+
+        int backgroundColor = 0;
+        switch (artists.get(position).getCategory()){
+            case "female":
+                backgroundColor = convertView.getResources().getColor(R.color.bg_female);
+                break;
+            case "male":
+                backgroundColor = convertView.getResources().getColor(R.color.bg_male);
+                break;
+            case "group":
+                backgroundColor = convertView.getResources().getColor(R.color.bg_group);
+                break;
         }
+        convertView.setBackgroundColor(backgroundColor);
         return convertView;
     }
 

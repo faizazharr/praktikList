@@ -5,12 +5,30 @@ import androidx.annotation.NonNull;
 class Artist {
     private String nama;
     private int follower;
-    private String kelamin;
+    private String category;
+    private String countryCode;
 
-    public Artist(String nama, int follower, String kelamin) {
+    public Artist(String nama, int follower, String category, String countryCode) {
         this.nama = nama;
         this.follower = follower;
-        this.kelamin = kelamin;
+        this.category = category;
+        this.countryCode = countryCode;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 
     public String getNama() {
@@ -29,13 +47,7 @@ class Artist {
         this.follower = follower;
     }
 
-    public String getKelamin() {
-        return kelamin;
-    }
 
-    public void setKelamin(String kelamin) {
-        this.kelamin = kelamin;
-    }
 
     @NonNull
     @Override
